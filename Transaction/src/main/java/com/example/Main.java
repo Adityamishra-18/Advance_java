@@ -7,17 +7,17 @@ public class Main {
         String user = "root";
         String password = "aditya@2005";
         Connection con = null;
-        Statement stmt = null;
+        Statement st = null;
 
         try {
             con = DriverManager.getConnection(url, user, password);
-            stmt = con.createStatement();
+            st = con.createStatement();
             con.setAutoCommit(false);
 
-            stmt.executeUpdate("update acc_data set ac_balance = ac_balance -1000 where ac_id = 1");
+            st.executeUpdate("update acc_data set ac_balance = ac_balance -1000 where ac_id = 1");
             System.out.println("Money Debited from account");
 
-            stmt.executeUpdate("update acc_data set ac_balance = ac_balance + 1000 where ac_id = 2");
+            st.executeUpdate("update acc_data set ac_balance = ac_balance + 1000 where ac_id = 2");
             System.out.println("Payment Successfully");
             con.commit();
             System.out.println("Transaction committed to database.");
