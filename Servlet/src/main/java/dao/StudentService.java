@@ -33,21 +33,43 @@ public class StudentService {
         }
 
     }
-    public int login(String email,int password){
-        int result=0;
+//    public int login(String email,int password){
+//        int result=0;
+//        try {
+//            PreparedStatement prt=con.prepareStatement("select * from student where email=? and password=?");
+//            prt.setString(1,email);
+//            prt.setInt(2,password);
+//            ResultSet rs=prt.executeQuery();
+//            if(rs.next()){
+//                result=1;
+//            }else{
+//                System.out.println("login failed");
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return result;
+//    }
+    public Student validate(String email,int password){
+        String sql="select * from student where email=? and password=?";
         try {
-            PreparedStatement prt=con.prepareStatement("select * from student where email=? and password=?");
+            PreparedStatement prt=con.prepareStatement(sql);
+            Student student=new Student();
             prt.setString(1,email);
             prt.setInt(2,password);
             ResultSet rs=prt.executeQuery();
             if(rs.next()){
-                result=1;
+                student.setId(rs.getInt(1));
+                student.setName(rs.getString(2));
+                student.setEmail(rs.getString(3));
+                student.setRegd(rs.getString(4));
+                student.setPassword(rs.getInt(5));
+                return student;
             }else{
-                System.out.println("login failed");
+                return null;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return result;
     }
 }

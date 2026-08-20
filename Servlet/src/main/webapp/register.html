@@ -1,21 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Registration Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .container {
+      width: 400px;
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .container h1 {
+      text-align: center;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .container p {
+      text-align: center;
+      color: #777;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      color: #333;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .form-group input:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 8px;
+      background: #667eea;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #5568d8;
+    }
+
+    .login {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .login a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
-<form action="register" method="post">
-  <input type="number" name="id" placeholder="enter your id">
-    <br>
-  <input type="text" name="username" placeholder="enter your name">
-    <br>
-  <input type="email" name="email" placeholder="enter your email">
-    <br>
-  <input type="text" name="regd" placeholder="enter your regd">
-    <br>
-    <input type="password" name="password" placeholder="enter your password">
-<button type="submit">Register</button>
-</form>
+
+<div class="container">
+
+  <h1>Student Registration</h1>
+  <p>Create your account to continue</p>
+
+  <form action="register" method="post">
+
+    <div class="form-group">
+      <label for="id">Student ID</label>
+      <input type="number"
+             id="id"
+             name="id"
+             placeholder="Enter your ID"
+             required>
+    </div>
+
+    <div class="form-group">
+      <label for="username">Name</label>
+      <input type="text"
+             id="username"
+             name="username"
+             placeholder="Enter your name"
+             required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email"
+             id="email"
+             name="email"
+             placeholder="Enter your email"
+             required>
+    </div>
+
+    <div class="form-group">
+      <label for="regd">Registration Number</label>
+      <input type="text"
+             id="regd"
+             name="regd"
+             placeholder="Enter your registration number"
+             required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password"
+             id="password"
+             name="password"
+             placeholder="Enter your password"
+             required>
+    </div>
+
+    <button type="submit">Register</button>
+
+  </form>
+
+  <div class="login">
+    Already have an account?
+    <a href="login.html">Login</a>
+  </div>
+
+</div>
+
 </body>
 </html>
